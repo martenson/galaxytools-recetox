@@ -1,0 +1,28 @@
+<tool id="export_to_path_single" name="export to path" version="0.0.2">
+    <description>on a filesystem accessible to compute node</description>
+    <requirements>
+        <requirement type="package" version="3.6">python</requirement>
+    </requirements>
+    <command detect_errors="aggressive"><![CDATA[
+python '$__tool_directory__/export_to_path_single.py'
+-p '$remote_path'
+'${export_dataset}'
+> '$log'
+    ]]></command>
+    <inputs>
+        <param name="export_dataset" type="data" format="data" label="Dataset to export" />
+        <param name="remote_path" type="text" value="" label="Remote path of the new dataset." help="Full absolute path to the new dataset to export.">
+            <validator type="empty_field" />
+            <sanitizer sanitize="false" />
+        </param>
+    </inputs>
+    <outputs>
+        <data name="log" format="txt" />
+    </outputs>
+    <tests>
+    </tests>
+    <help><![CDATA[
+Simple tool to copies a single dataset to an accessible path.
+    ]]></help>
+    <citations/>
+</tool>
