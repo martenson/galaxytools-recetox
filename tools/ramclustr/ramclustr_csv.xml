@@ -4,7 +4,8 @@
     </macros>
 
     <requirements>
-        <container type="docker">recetox/ramclustr:1.1.0-recetox0</container>
+        <requirement type="package" version="1.2.1">r-ramclustr</requirement>
+        <requirement type="package" version="4.0">r</requirement>
     </requirements>
 
     <inputs>
